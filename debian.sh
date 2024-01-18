@@ -7,5 +7,7 @@ if [ $UID -ne 0 ]; then
 fi
 
 apt-get install xfce4 firefox-esr mousepad ristretto thunar-archive-plugin xfce4-notifyd xfce4-screenshooter xfce4-terminal xfce4-taskmanager fonts-liberation yaru-theme-gtk yaru-theme-icon transmission-gtk
-apt-get install gvfs-backends celluloid xfce4-power-manager --no-install-recommends
+apt-get install gvfs-backends celluloid xfce4-power-manager network-manager-gnome --no-install-recommends
 echo "The Xfce desktop has been installed successfully."
+echo "Set managed=true in network manager config:"
+echo "sudo nano /etc/NetworkManager/NetworkManager.conf"
