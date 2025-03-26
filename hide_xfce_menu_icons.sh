@@ -31,3 +31,14 @@ done
 if [ $counter -eq 0 ]; then
    echo "No desktop menu entries found.";
 fi
+
+# Disable "recent files" options for privacy reason on XFCE
+mkdir -p ~/.config/gtk-3.0/
+cat <<EOF >> ~/.config/gtk-3.0/settings.ini
+[Settings]
+gtk-recent-files-max-age=0
+gtk-recent-files-limit=0
+EOF
+if [ -f ~/.local/share/recently-used.xbel ]; then
+	rm ~/.local/share/recently-used.xbel
+fi
