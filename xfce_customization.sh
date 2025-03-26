@@ -1,4 +1,5 @@
 #!/bin/bash
+# This Bash script customizes the XFCE desktop, by Andrei Pall
 xfconf-query --channel thunar -p /misc-show-delete-action -t 'bool' -s true --create
 xfconf-query --channel xfce4-desktop -p /desktop-menu/show -t 'bool' -s false --create
 xfconf-query --channel xfce4-desktop -p /windowlist-menu/show -t 'bool' -s false --create
