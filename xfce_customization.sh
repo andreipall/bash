@@ -47,11 +47,11 @@ xfconf-query --channel xfce4-terminal -p /background-mode -t string -s TERMINAL_
 xfconf-query --channel xfce4-terminal -p /font-use-system -t 'bool' -s true --create
 xfconf-query --channel xfwm4 -p /general/workspace_count -t int -s 1
 xfconf-query --channel xfwm4 -p /general/title_font -t string -s 'Noto Sans Bold 9'
-xfconf-query --channel xfwm4 -p /general/theme -t string -s 'Materia-dark'
+xfconf-query --channel xfwm4 -p /general/theme -t string -s 'Qogir'
 xfconf-query --channel xsettings -p /Gtk/FontName -t string -s 'Noto Sans 9'
 xfconf-query --channel xsettings -p /Gtk/MonospaceFontName -t string -s 'Noto Sans Mono 9'
-xfconf-query --channel xsettings -p /Net/IconThemeName -t string -s 'Papirus-Dark'
-xfconf-query --channel xsettings -p /Net/ThemeName -t string -s 'Materia-dark'
+xfconf-query --channel xsettings -p /Net/IconThemeName -t string -s 'Qogir'
+xfconf-query --channel xsettings -p /Net/ThemeName -t string -s 'Qogir'
 xfconf-query --channel xsettings -p /Xft/Antialias -t int -s 1
 xfconf-query --channel xsettings -p /Xft/DPI -t int -s -1 --create
 xfconf-query --channel xsettings -p /Xft/Hinting -t int -s -1

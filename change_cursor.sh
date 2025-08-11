@@ -6,5 +6,5 @@ if [ $UID -ne 0 ]; then
     exit 1
 fi
 
-pacman -S vimix-cursors papirus-icon-theme materia-gtk-theme
-sed -i -e 's/Adwaita/Vimix-cursors/g' /usr/share/icons/default/index.theme
+# pacman -S vimix-cursors papirus-icon-theme materia-gtk-theme
+sed -i -e 's/Adwaita/Qogir/g' /usr/share/icons/default/index.theme
