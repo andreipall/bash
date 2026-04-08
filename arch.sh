@@ -36,7 +36,7 @@ systemctl enable systemd-resolved.service
 pacman -S xorg-server xf86-video-intel
 useradd -m -c "Andrei Pall" -G wheel andrei
 passwd andrei
-sed -i "s/^[[:space:]]*#\s*%wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/"
+sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 sed -i 's/^GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/' /etc/default/grub
 sed -i 's/^GRUB_PRELOAD_MODULES="part_gpt part_msdos"/GRUB_PRELOAD_MODULES="part_gpt"/' /etc/default/grub
 sed -i 's/^GRUB_TIMEOUT_STYLE=menu/GRUB_TIMEOUT_STYLE=hidden/' /etc/default/grub
