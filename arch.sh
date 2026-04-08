@@ -8,7 +8,7 @@ mkfs.fat -F32 /dev/sdb1
 mkfs.ext4 /dev/sdb2
 pacman -Syy
 mount /dev/sdb2 /mnt
-pacstrap -K /mnt base linux linux-firmware-intel sudo nano
+pacstrap -K /mnt base linux linux-firmware-intel linux-firmware-realtek sudo nano
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Europe/Bucharest /etc/localtime
