@@ -62,3 +62,6 @@ ufw enable
 ufw status numbered
 timedatectl set-ntp true
 timedatectl status
+exit
+umount -R /mnt
+reboot
