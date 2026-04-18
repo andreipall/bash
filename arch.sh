@@ -12,7 +12,7 @@ pacstrap -K /mnt base
 touch /mnt/etc/vconsole.conf
 pacstrap -K /mnt linux linux-firmware-intel linux-firmware-realtek sudo nano
 genfstab -U /mnt >> /mnt/etc/fstab
-arch-chroot /mnt
+arch-chroot /mnt /bin/bash <<EOF
 ln -sf /usr/share/zoneinfo/Europe/Bucharest /etc/localtime
 hwclock --systohc
 sed -i 's/^#\(en_US.UTF-8 UTF-8\)/\1/' /etc/locale.gen
@@ -26,13 +26,13 @@ mkdir /boot/efi
 mount /dev/sdb1 /boot/efi
 grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
 grub-mkconfig -o /boot/grub/grub.cfg
-cat > /etc/systemd/network/20-wired.network <<EOF
+cat > /etc/systemd/network/20-wired.network <<NET
 [Match]
 Name=enp4s0
 
 [Network]
 DHCP=yes
-EOF
+NET
 systemctl enable systemd-networkd.service
 systemctl enable systemd-resolved.service
 pacman -S xorg-server xf86-video-intel
@@ -65,5 +65,6 @@ ufw status numbered
 timedatectl set-ntp true
 timedatectl status
 exit
+EOF
 umount -R /mnt
 reboot
