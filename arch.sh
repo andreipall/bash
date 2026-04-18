@@ -1,5 +1,5 @@
 #!/bin/zsh
-# This Bash script installs the Xfce desktop on Arch Linux, by Andrei Pall
+# This Zsh script installs the Xfce desktop on Arch Linux, by Andrei Pall
 if [[ ! -b /dev/sdb1 || ! -b /dev/sdb2 ]]; then
     echo "Required partitions not found!"
     exit 1
