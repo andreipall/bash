@@ -56,12 +56,10 @@ gpasswd -a andrei autologin
 pacman -S --noconfirm ufw
 systemctl enable ufw.service
 systemctl start ufw.service
-systemctl status ufw
 ufw default allow outgoing
 ufw default deny incoming
 ufw allow 51413/tcp
 ufw enable
-ufw status numbered
 timedatectl set-ntp true
 timedatectl status
 exit
