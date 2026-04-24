@@ -1,7 +1,6 @@
 #!/bin/zsh
 # This Zsh script installs the Xfce desktop on Arch Linux, by Andrei Pall
-PASSWORD=""
-set -euo pipefail
+set -e
 if [[ ! -b /dev/sdb1 || ! -b /dev/sdb2 ]]; then
     echo "Required partitions not found!"
     exit 1
@@ -36,11 +35,9 @@ Name=enp4s0
 [Network]
 DHCP=yes
 NET
-systemctl enable systemd-networkd.service
-systemctl enable systemd-resolved.service
 pacman -S --noconfirm xorg-server xf86-video-intel
 useradd -m -c "Andrei Pall" -G wheel andrei
-echo "andrei:$PASSWORD" | chpasswd
+echo "andrei:password" | chpasswd
 sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 sed -i 's/^GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/' /etc/default/grub
 sed -i 's/^GRUB_PRELOAD_MODULES="part_gpt part_msdos"/GRUB_PRELOAD_MODULES="part_gpt"/' /etc/default/grub
