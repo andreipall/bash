@@ -13,6 +13,7 @@ touch /mnt/etc/vconsole.conf
 pacstrap -K /mnt linux linux-firmware-intel linux-firmware-realtek sudo nano
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt /bin/bash <<'CHROOT'
+set -e
 ln -sf /usr/share/zoneinfo/Europe/Bucharest /etc/localtime
 hwclock --systohc
 sed -i 's/^#\(en_US.UTF-8 UTF-8\)/\1/' /etc/locale.gen
