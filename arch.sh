@@ -28,13 +28,6 @@ echo "root:password" | chpasswd
 pacman -S --noconfirm grub efibootmgr intel-ucode
 grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
 grub-mkconfig -o /boot/grub/grub.cfg
-cat <<'NET' > /etc/systemd/network/20-wired.network
-[Match]
-Name=enp4s0
-
-[Network]
-DHCP=yes
-NET
 pacman -S --noconfirm xorg-server xf86-video-intel
 useradd -m -c "Andrei Pall" -G wheel andrei
 echo "andrei:password" | chpasswd
