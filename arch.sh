@@ -22,7 +22,7 @@ locale-gen
 echo LANG=en_US.UTF-8 > /etc/locale.conf
 export LANG=en_US.UTF-8
 echo andrei-pc > /etc/hostname
-echo "root:$PASSWORD" | chpasswd
+echo "root:password" | chpasswd
 pacman -S --noconfirm grub efibootmgr intel-ucode
 mkdir /boot/efi
 mount /dev/sdb1 /boot/efi
