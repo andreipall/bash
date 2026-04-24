@@ -13,6 +13,8 @@ pacstrap -K /mnt base
 touch /mnt/etc/vconsole.conf
 pacstrap -K /mnt linux linux-firmware-intel linux-firmware-realtek sudo nano
 genfstab -U /mnt >> /mnt/etc/fstab
+mkdir -p /mnt/boot/efi
+mount /dev/sdb1 /mnt/boot/efi
 arch-chroot /mnt /bin/bash <<'CHROOT'
 set -e
 ln -sf /usr/share/zoneinfo/Europe/Bucharest /etc/localtime
@@ -24,8 +26,6 @@ export LANG=en_US.UTF-8
 echo andrei-pc > /etc/hostname
 echo "root:password" | chpasswd
 pacman -S --noconfirm grub efibootmgr intel-ucode
-mkdir /boot/efi
-mount /dev/sdb1 /boot/efi
 grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
 grub-mkconfig -o /boot/grub/grub.cfg
 cat <<'NET' > /etc/systemd/network/20-wired.network
