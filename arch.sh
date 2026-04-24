@@ -14,6 +14,7 @@ touch /mnt/etc/vconsole.conf
 pacstrap -K /mnt linux linux-firmware-intel linux-firmware-realtek sudo nano
 genfstab -U /mnt >> /mnt/etc/fstab
 mkdir -p /mnt/boot/efi
+mount /dev/sdb1 /mnt/boot/efi
 arch-chroot /mnt /bin/bash <<'CHROOT'
 set -e
 ln -sf /usr/share/zoneinfo/Europe/Bucharest /etc/localtime
@@ -24,7 +25,6 @@ echo LANG=en_US.UTF-8 > /etc/locale.conf
 export LANG=en_US.UTF-8
 echo andrei-pc > /etc/hostname
 echo "root:password" | chpasswd
-mount /dev/sdb1 /boot/efi
 pacman -S --noconfirm grub efibootmgr intel-ucode
 grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
 grub-mkconfig -o /boot/grub/grub.cfg
