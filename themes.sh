@@ -32,7 +32,7 @@ cd /root/Qogir-theme-2025-08-17
 ./install.sh -t default -c standard --tweaks image
 cd /root/
 rm -R Qogir-*
-echo "Icon theme installed."
+echo "Theme installed."
 
 sed -i 's/^\s*load-module module-suspend-on-idle/#&/' /etc/pulse/default.pa
 echo "Pulseaudio config updated."
