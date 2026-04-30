@@ -34,6 +34,9 @@ cd /root/
 rm -R Qogir-*
 echo "Theme installed."
 
+sed -i -e 's/Adwaita/Qogir/g' /usr/share/icons/default/index.theme
+echo "Cursor theme updated."
+
 sed -i 's/^\s*load-module module-suspend-on-idle/#&/' /etc/pulse/default.pa
 echo "Pulseaudio config updated."
 
