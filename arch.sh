@@ -46,6 +46,18 @@ sed -i 's/^#autologin-user=/autologin-user=andrei/' /etc/lightdm/lightdm.conf
 sed -i 's/^#autologin-session=/autologin-session=xfce/' /etc/lightdm/lightdm.conf
 groupadd -r autologin
 gpasswd -a andrei autologin
+
+tee /etc/polkit-1/rules.d/49-udisks2-mount.rules > /dev/null <<'INNER'
+polkit.addRule(function(action, subject) {
+    if (
+        (action.id.indexOf("org.freedesktop.udisks2.") == 0) &&
+        subject.isInGroup("wheel")
+    ) {
+        return polkit.Result.YES;
+    }
+});
+INNER
+
 pacman -S --noconfirm ufw
 systemctl enable ufw.service
 systemctl start ufw.service
