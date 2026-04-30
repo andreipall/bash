@@ -12,7 +12,6 @@ echo "Running as root: $(whoami)"
 
 # Run a script as root
 echo "Running root scripts..."
-./mount.sh
 ./themes.sh
 
 # Running scripts as the original user
