@@ -17,4 +17,4 @@ echo "Running root scripts..."
 # Running scripts as the original user
 echo "Running user script as $ORIGINAL_USER..."
 sudo -u "$ORIGINAL_USER" ./hide_xfce_menu_icons.sh
-sudo -u "$ORIGINAL_USER" ./xfce_customization.sh
+sudo -E -u "$ORIGINAL_USER" ./xfce_customization.sh
