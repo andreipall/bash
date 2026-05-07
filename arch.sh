@@ -41,6 +41,7 @@ pacman -S --noconfirm mousepad ristretto thunar-archive-plugin xfce4-pulseaudio-
 pacman -S --noconfirm lightdm-gtk-greeter network-manager-applet noto-fonts parole gst-libav gst-plugins-bad gst-plugins-ugly firefox gvfs gvfs-mtp xarchiver unrar unzip pulseaudio pavucontrol transmission-gtk
 systemctl enable lightdm.service
 systemctl enable NetworkManager
+systemctl set-default graphical.target
 sed -i 's/^#xserver-command=X/xserver-command=X -s 0 -dpms/' /etc/lightdm/lightdm.conf
 sed -i 's/^#autologin-user=/autologin-user=andrei/' /etc/lightdm/lightdm.conf
 sed -i 's/^#autologin-session=/autologin-session=xfce/' /etc/lightdm/lightdm.conf
