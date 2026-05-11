@@ -22,7 +22,7 @@ xfconf-query --channel xfce4-panel -p /plugins/plugin-12 -t string -s 'separator
 xfconf-query --channel xfce4-panel -p /plugins/plugin-12/style -t int -s 0 --create
 xfconf-query --channel xfce4-panel -p /plugins/plugin-13 -t string -s 'actions' --create
 xfconf-query --channel xfce4-panel -p /plugins/plugin-14 -t string -s 'launcher' --create
-xfconf-query --channel xfce4-panel -p /plugins/plugin-14/items -a -t string -s 'chromium.desktop' --create
+xfconf-query --channel xfce4-panel -p /plugins/plugin-14/items -a -t string -s 'firefox.desktop' --create
 xfconf-query --channel xfce4-panel -p /plugins/plugin-1/button-title -t string -s 'Start' --create
 xfconf-query --channel xfce4-panel -p /plugins/plugin-2 -t string -s 'tasklist' --create
 xfconf-query --channel xfce4-panel -p /plugins/plugin-2/grouping -t 'bool' -s false --create
