@@ -1,7 +1,7 @@
 #!/bin/bash
 # This Bash script hides the desktop menu entries for the current user, by Andrei Pall
 
-entry_names=("avahi-discover.desktop" "bssh.desktop" "bvnc.desktop" "gcr-prompter.desktop" "gcr-viewer.desktop" "mpv.desktop" "qv4l2.desktop" "qvidcap.desktop" "xfce4-mail-reader.desktop" "debian-uxterm.desktop" "debian-xterm.desktop" "display-im6.q16.desktop")
+entry_names=("avahi-discover.desktop" "bssh.desktop" "bvnc.desktop" "gcr-prompter.desktop" "gcr-viewer.desktop" "mpv.desktop" "qv4l2.desktop" "qvidcap.desktop" "xfce4-mail-reader.desktop" "debian-uxterm.desktop" "debian-xterm.desktop" "display-im6.q16.desktop" "cmake-gui.desktop")
 path="/usr/share/applications/"
 home_path="$HOME/.local/share/applications/"
 
