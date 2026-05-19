@@ -38,7 +38,7 @@ sed -i 's/^GRUB_TIMEOUT_STYLE=menu/GRUB_TIMEOUT_STYLE=hidden/' /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 pacman -S --noconfirm exo garcon thunar thunar-volman tumbler xfce4-appfinder xfce4-panel xfce4-session xfce4-settings xfce4-terminal xfconf xfdesktop xfwm4 sassc
 pacman -S --noconfirm mousepad ristretto thunar-archive-plugin xfce4-pulseaudio-plugin xfce4-screenshooter xfce4-notifyd
-pacman -S --noconfirm lightdm-gtk-greeter network-manager-applet noto-fonts parole gst-libav gst-plugins-bad gst-plugins-ugly firefox gvfs gvfs-mtp xarchiver unrar unzip pulseaudio pavucontrol transmission-gtk
+pacman -S --noconfirm lightdm-gtk-greeter network-manager-applet noto-fonts parole gst-libav gst-plugins-bad gst-plugins-ugly firefox gvfs gvfs-mtp xarchiver unrar unzip pulseaudio pavucontrol transmission-gtk python-requests python-chardet bleachbit
 systemctl enable lightdm.service
 systemctl enable NetworkManager
 systemctl set-default graphical.target
