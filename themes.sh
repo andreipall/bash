@@ -37,7 +37,26 @@ echo "Theme installed."
 sed -i -e 's/Adwaita/Qogir/g' /usr/share/icons/default/index.theme
 echo "Cursor theme updated."
 
-sed -i 's/^\s*load-module module-suspend-on-idle/#&/' /etc/pulse/default.pa
-echo "Pulseaudio config updated."
+#sed -i 's/^\s*load-module module-suspend-on-idle/#&/' /etc/pulse/default.pa
+#echo "Pulseaudio config updated."
+mkdir -p /etc/wireplumber/wireplumber.conf.d
+
+tee /etc/wireplumber/wireplumber.conf.d/disable-suspend.conf >/dev/null <<'EOF'
+monitor.alsa.rules = [
+  {
+    matches = [
+      {
+        node.name = "~alsa_.*"
+      }
+    ]
+    actions = {
+      update-props = {
+        session.suspend-timeout-seconds = 0
+      }
+    }
+  }
+]
+EOF
+echo "PipeWire config updated."
 
 echo "Done."
