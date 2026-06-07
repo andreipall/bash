@@ -24,7 +24,7 @@ APT::Install-Suggests "false";
 EOF
 
 apt-get install xserver-xorg-video-intel xserver-xorg-input-all xserver-xorg-core polkitd systemd-timesyncd --no-install-recommends
-apt-get install xfce4 exfatprogs eject sassc firefox-esr mousepad ristretto thunar-archive-plugin xfce4-notifyd xfce4-screenshooter xfce4-terminal gvfs-backends fonts-noto xarchiver 7zip unzip transmission-gtk parole network-manager-applet gstreamer1.0-libav gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gnome-icon-theme tumbler ca-certificates pulseaudio pavucontrol lightdm lightdm-gtk-greeter ufw  --no-install-recommends
+apt-get install pipewire-pulse xfce4 exfatprogs eject sassc firefox-esr mousepad ristretto thunar-archive-plugin xfce4-notifyd xfce4-screenshooter xfce4-terminal gvfs-backends fonts-noto xarchiver 7zip unzip parole network-manager-applet gstreamer1.0-libav gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gnome-icon-theme tumbler ca-certificates pavucontrol lightdm lightdm-gtk-greeter ufw  --no-install-recommends
 apt remove os-prober
 systemctl enable dbus
 systemctl enable lightdm
@@ -33,7 +33,7 @@ systemctl set-default graphical.target
 ufw enable
 ufw default deny incoming
 ufw default allow outgoing
-ufw allow 51413/tcp
+#ufw allow 51413/tcp
 ufw status verbose
 timedatectl set-ntp true
 timedatectl status
