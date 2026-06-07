@@ -7,19 +7,16 @@ if [ $UID -ne 0 ]; then
     exit 1
 fi
 
-path="/mnt/Date"
-
-# Check if the mount point directory exists and create it if it doesn't
-if [ ! -d "$path" ]; then
-    mkdir -p "$path"
-    partition_uuid=$( blkid | grep -i 'LABEL="Date"' | awk -F '"' '{print $4}' )
-    echo "UUID=${partition_uuid} ${path}       ext4    defaults  0      2" >> /etc/fstab
-    mount -a
-    systemctl daemon-reload
-    echo "The partition ${path} has been mounted."
-else
-    echo "The partition ${path} is already mounted."
-fi
+tee /etc/polkit-1/rules.d/49-udisks2-mount.rules > /dev/null <<'INNER'
+polkit.addRule(function(action, subject) {
+    if (
+        (action.id.indexOf("org.freedesktop.udisks2.") == 0) &&
+        subject.isInGroup("sudo")
+    ) {
+        return polkit.Result.YES;
+    }
+});
+INNER
 
 cat <<'EOF' > /etc/apt/apt.conf.d/99norecommends
 APT::Install-Recommends "false";
@@ -32,6 +29,7 @@ apt remove os-prober
 systemctl enable dbus
 systemctl enable lightdm
 systemctl enable NetworkManager
+systemctl set-default graphical.target
 ufw enable
 ufw default deny incoming
 ufw default allow outgoing
