@@ -17,7 +17,9 @@ xfconf-query --channel xfce4-panel -p /plugins/plugin-10 -t string -s 'separator
 xfconf-query --channel xfce4-panel -p /plugins/plugin-10/style -t int -s 0 --create
 xfconf-query --channel xfce4-panel -p /plugins/plugin-11 -t string -s 'clock' --create
 xfconf-query --channel xfce4-panel -p /plugins/plugin-11/digital-date-font -t string -s 'Noto Sans 8' --create
+xfconf-query --channel xfce4-panel -p /plugins/plugin-11/digital-date-format -t string -s '%d/%m/%Y' --create
 xfconf-query --channel xfce4-panel -p /plugins/plugin-11/digital-time-font -t string -s 'Noto Sans 8' --create
+xfconf-query --channel xfce4-panel -p /plugins/plugin-11/digital-layout -t int -s 1 --create
 xfconf-query --channel xfce4-panel -p /plugins/plugin-12 -t string -s 'separator' --create
 xfconf-query --channel xfce4-panel -p /plugins/plugin-12/style -t int -s 0 --create
 xfconf-query --channel xfce4-panel -p /plugins/plugin-13 -t string -s 'actions' --create
