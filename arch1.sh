@@ -69,7 +69,7 @@ sed -i 's/^GRUB_PRELOAD_MODULES="part_gpt part_msdos"/GRUB_PRELOAD_MODULES="part
 sed -i 's/^GRUB_TIMEOUT_STYLE=menu/GRUB_TIMEOUT_STYLE=hidden/' /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
-pacman -S --noconfirm pipewire-pulse exo garcon thunar thunar-volman tumbler xfce4-appfinder xfce4-panel xfce4-session xfce4-settings xfce4-terminal xfconf xfdesktop xfwm4 sassc mousepad ristretto thunar-archive-plugin xfce4-pulseaudio-plugin xfce4-screenshooter xfce4-notifyd lightdm-gtk-greeter network-manager-applet noto-fonts noto-fonts-extra noto-fonts-emoji parole gst-libav gst-plugins-bad gst-plugins-ugly firefox gvfs gvfs-mtp xarchiver unrar unzip 7zip pavucontrol transmission-gtk python-requests python-chardet bleachbit
+pacman -S --noconfirm pipewire-pulse exo garcon thunar thunar-volman tumbler xfce4-appfinder xfce4-panel xfce4-session xfce4-settings xfce4-terminal xfconf xfdesktop xfwm4 sassc mousepad ristretto thunar-archive-plugin xfce4-pulseaudio-plugin xfce4-screenshooter xfce4-notifyd lightdm-gtk-greeter network-manager-applet noto-fonts noto-fonts-extra noto-fonts-emoji parole gst-libav gst-plugins-bad gst-plugins-ugly firefox gvfs gvfs-mtp xarchiver unrar unzip 7zip pavucontrol transmission-gtk python-requests python-chardet bleachbit quodlibet
 
 systemctl enable lightdm.service
 systemctl enable NetworkManager
